@@ -1,0 +1,3 @@
+com\garagna\h2demo\repository\BookRepository.class
+com\garagna\h2demo\model\Book.class
+com\garagna\h2demo\H2DemoApplication.class
