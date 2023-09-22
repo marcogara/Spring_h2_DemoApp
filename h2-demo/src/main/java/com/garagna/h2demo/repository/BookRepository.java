@@ -7,4 +7,5 @@ import com.garagna.h2demo.model.Book;
 public interface BookRepository extends CrudRepository<Book, Integer>
 {
 
+
 }
