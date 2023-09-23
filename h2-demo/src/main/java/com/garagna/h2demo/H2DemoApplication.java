@@ -7,7 +7,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import com.garagna.h2demo.model.Book;
+import com.garagna.h2demo.model.Student;
 import com.garagna.h2demo.repository.BookRepository;
+import com.garagna.h2demo.repository.StudentRepository;
 
 // to access the database on the browser: http://localhost:8080/h2-console/
 
@@ -23,7 +25,7 @@ public class H2DemoApplication {
 
 	 // Populate initial data into the database (alternative to using schema.sql)
 	@Bean
-	CommandLineRunner commandLineRunner(BookRepository repository) {
+	CommandLineRunner bookCommandLineRunner(BookRepository repository) {
 		return args -> {
 
 			repository.save(new Book(null,"test",432,"mark"));
@@ -32,11 +34,21 @@ public class H2DemoApplication {
 			for(Book book : repository.findAll()){
 				System.out.println(book);
 
-				
 			}
 
 		};
 	}
+
+		@Bean
+	 CommandLineRunner studentCommandLineRunner(StudentRepository repository) {
+	 	return args -> {
+
+			repository.save(new Student(null,"John","pda"));
+		};
+
+
+	}
+
 
 	/*
 	In the Spring Framework, @Bean is an annotation used to declare a method as a producer of a bean managed by the Spring container. Beans are objects that Spring manages and provides to other parts of your application. This @Bean method, named commandLineRunner, serves a specific purpose:

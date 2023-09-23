@@ -1,3 +1,5 @@
-com\garagna\h2demo\repository\BookRepository.class
 com\garagna\h2demo\model\Book.class
 com\garagna\h2demo\H2DemoApplication.class
+com\garagna\h2demo\repository\StudentRepository.class
+com\garagna\h2demo\repository\BookRepository.class
+com\garagna\h2demo\model\Student.class
