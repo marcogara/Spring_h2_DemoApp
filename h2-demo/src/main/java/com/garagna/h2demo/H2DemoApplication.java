@@ -31,6 +31,8 @@ public class H2DemoApplication {
 
 			for(Book book : repository.findAll()){
 				System.out.println(book);
+
+				
 			}
 
 		};
