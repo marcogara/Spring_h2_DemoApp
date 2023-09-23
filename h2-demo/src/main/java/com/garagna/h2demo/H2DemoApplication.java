@@ -44,8 +44,12 @@ public class H2DemoApplication {
 	 	return args -> {
 
 			repository.save(new Student(null,"John","pda"));
-		};
 
+				for(Student student : repository.findAll()){
+				System.out.println(student);
+
+			}
+		};
 
 	}
 
