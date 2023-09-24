@@ -1,5 +1,7 @@
 package com.garagna.h2demo;
 
+import java.text.SimpleDateFormat;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,30 +10,35 @@ import org.springframework.context.annotation.Bean;
 
 import com.garagna.h2demo.model.Book;
 import com.garagna.h2demo.model.Student;
+
+import java.util.Date;
+
 import com.garagna.h2demo.repository.BookRepository;
 import com.garagna.h2demo.repository.StudentRepository;
 
 // to access the database on the browser: http://localhost:8080/h2-console/
-
 // with jdbc URL: jdbc:h2:mem:bookstore
-
 @SpringBootApplication
-public class H2DemoApplication {
+public class H2DemoApplication
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
-	SpringApplication.run(H2DemoApplication.class, args);
+		SpringApplication.run(H2DemoApplication.class, args);
 	}
 
-	 // Populate initial data into the database (alternative to using schema.sql)
+	// Populate initial data into the database (alternative to using schema.sql)
 	@Bean
-	CommandLineRunner bookCommandLineRunner(BookRepository repository) {
-		return args -> {
+	CommandLineRunner bookCommandLineRunner(BookRepository repository)
+	{
+		return args ->
+		{
 
-			repository.save(new Book(null,"test",432,"mark"));
+			repository.save(new Book(null, "test", 432, "mark"));
 
-
-			for(Book book : repository.findAll()){
+			for (Book book : repository.findAll())
+			{
 				System.out.println(book);
 
 			}
@@ -39,18 +46,24 @@ public class H2DemoApplication {
 		};
 	}
 
-		@Bean
-	 CommandLineRunner studentCommandLineRunner(StudentRepository repository) {
-	 	return args -> {
+	@Bean
+	CommandLineRunner studentCommandLineRunner(StudentRepository repository)
+	{
+		return args ->
+		{
 
-				for(Student student : repository.findAll()){
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date dateOfBirth = dateFormat.parse("1997-01-15");
+			repository.save(new Student(null, "Kevin", "kevin@example.com", "Computer Science", "Computer Science Department", 2020, 2024, dateOfBirth, "+1234567890", "123 Main St"));
+
+			for (Student student : repository.findAll())
+			{
 				System.out.println(student);
 
 			}
 		};
 
 	}
-
 
 	/*
 	In the Spring Framework, @Bean is an annotation used to declare a method as a producer of a bean managed by the Spring container. Beans are objects that Spring manages and provides to other parts of your application. This @Bean method, named commandLineRunner, serves a specific purpose:
@@ -67,6 +80,5 @@ public class H2DemoApplication {
 
 In summary, the @Bean annotation marks a method as a bean factory method, and the method is responsible for configuring and returning a bean instance. The bean can encapsulate a specific functionality or behavior, and Spring manages its lifecycle and dependencies. In this case, the commandLineRunner bean runs code at application startup to populate initial data into a database, serving as an alternative to using SQL scripts.
 
-*/
-
+	 */
 }
