@@ -43,8 +43,6 @@ public class H2DemoApplication {
 	 CommandLineRunner studentCommandLineRunner(StudentRepository repository) {
 	 	return args -> {
 
-			repository.save(new Student(null,"John","pda"));
-
 				for(Student student : repository.findAll()){
 				System.out.println(student);
 
