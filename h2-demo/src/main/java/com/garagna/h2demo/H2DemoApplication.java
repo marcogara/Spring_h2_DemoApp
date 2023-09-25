@@ -24,7 +24,6 @@ public class H2DemoApplication
 
 	public static void main(String[] args)
 	{
-
 		SpringApplication.run(H2DemoApplication.class, args);
 	}
 
@@ -64,6 +63,11 @@ public class H2DemoApplication
 				System.out.println(student);
 
 			}
+
+			System.out.println("number of raws in student table are: " + repository.count());
+
+			System.out.println("Student with id 4 is: " + repository.findById(4));
+
 		};
 
 	}
