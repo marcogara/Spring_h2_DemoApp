@@ -33,5 +33,11 @@ VALUES
     ('Liam', 'liam@example.com', 'Sociology', 'Sociology Department', 2019, 2023, '1999-12-29', '+4444444444', '777 Walnut St');
 
 
-insert into book(title,pages,author) values ('Book 1', 200, 'Author 1');
-insert into book(title,pages,author) values ('Book 2', 300, 'Author 2');
+insert into book(title,pages,author) values
+	('Book 1', 200, 'Author 1'),
+	('Book 2', 300, 'Author 2'),
+	('Book 3', 300, 'Author 3'),
+	('Book 4', 300, 'Author 4');
+
+
+

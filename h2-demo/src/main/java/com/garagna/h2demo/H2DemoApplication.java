@@ -36,6 +36,7 @@ public class H2DemoApplication
 		{
 
 			repository.save(new Book(null, "test", 432, "mark"));
+			repository.save(new Book(null, "Life 3.0", 390, "Max tegmark"));
 
 			for (Book book : repository.findAll())
 			{
