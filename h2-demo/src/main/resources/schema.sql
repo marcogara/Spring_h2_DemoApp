@@ -34,10 +34,16 @@ VALUES
 
 
 insert into book(title,pages,author) values
-	('Book 1', 200, 'Author 1'),
-	('Book 2', 300, 'Author 2'),
-	('Book 3', 300, 'Author 3'),
-	('Book 4', 300, 'Author 4');
+	('Atomic Habits', 200, 'James Clear'),
+	('Mindset', 330, 'Dr. Carol S. Dweck'),
+	('Holly', 300, 'Stephen King'),
+	('Control your Mind', 234,'Eric Robertson'),
+	('Das Mindset',543,'Flamur Berischa'),
+	('Surrounded by idiots', 300, 'Thomas Erikson'),
+    ('The Power of Now', 236, 'Eckhart Tolle'),
+    ('The Catcher in the Rye', 224, 'J.D. Salinger'),
+    ('To Kill a Mockingbird', 281, 'Harper Lee'),
+    ('The Great Gatsby', 180, 'F. Scott Fitzgerald');
 
 
 

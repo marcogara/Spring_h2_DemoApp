@@ -50,6 +50,7 @@ public class H2DemoApplication
 	@Bean
 	CommandLineRunner studentCommandLineRunner(StudentRepository repository)
 	{
+
 		return args ->
 		{
 
@@ -59,6 +60,7 @@ public class H2DemoApplication
 
 			for (Student student : repository.findAll())
 			{
+
 				System.out.println(student);
 
 			}
